@@ -1,6 +1,6 @@
 <?php
 
-include('includes/config.inc.php');
+include('includes/config.php');
 include('includes/database.php');
 include('includes/functions.php');
 secure();
@@ -37,8 +37,8 @@ if ($stm = $connect->prepare('SELECT * FROM users')) {
           <td><?php echo $record['username']; ?></td>
           <td><?php echo $record['email']; ?></td>
           <td><?php echo $record['active']; ?></td>
-          <td><a href = "users_edit.php?id = <?php echo $record['id']; ?>">Edit</a> | 
-              <a href = "users.php?delete = <?php echo $record['id']; ?>">Delete </a>
+          <td><a href = "users_edit.php?id=<?php echo $record['id']; ?>">Edit</a> | 
+              <a href = "users.php?delete=<?php echo $record['id']; ?>">Delete </a>
           </td>
       
         </tr>
@@ -46,7 +46,7 @@ if ($stm = $connect->prepare('SELECT * FROM users')) {
       <?php } ?>
       </table>
 
-      <a href = "users_add.php"> Add New User </a>
+      <a href ="users_add.php"> Add New User </a>
 
  
 
