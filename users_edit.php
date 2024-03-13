@@ -31,7 +31,7 @@ if (isset($_POST['username'])) {
             }
         }
 
-        set_message("A user  " . $_GET['id'] . " has beed updated");
+        set_message("A user  " . $_GET['id'] . " has been updated");
         header('Location: users.php');
         die();
 

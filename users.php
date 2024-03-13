@@ -12,7 +12,7 @@ if (isset($_GET['delete'])){
       $stm->execute();
       
 
-      set_message("A user " . $_GET['delete'] . " has beed deleted");
+      set_message("A user " . $_GET['delete'] . " has been deleted");
       header('Location: users.php');
       $stm->close();
       die();
@@ -55,8 +55,9 @@ if ($stm = $connect->prepare('SELECT * FROM users')) {
           <td><?php echo $record['username']; ?></td>
           <td><?php echo $record['email']; ?></td>
           <td><?php echo $record['active']; ?></td>
-          <td><a href = "users_edit.php?id = <?php echo $record['id']; ?>">Edit</a> | 
-              <a href = "users.php?delete = <?php echo $record['id']; ?>">Delete </a>
+          <td>
+            <a href="users_edit.php?id=<?php echo $record['id']; ?>">Edit</a>
+            <a href="users.php?delete=<?php echo $record['id']; ?>">Delete</a>
           </td>
       
         </tr>
