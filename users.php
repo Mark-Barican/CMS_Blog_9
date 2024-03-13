@@ -38,7 +38,7 @@ if ($stm = $connect->prepare('SELECT * FROM users')) {
 ?>
 <div class="container mt-5">
   <div class="row justify-content-center">
-    <h1 class="dispaly-1"> User Management</h1>
+    <h1 class="display-1"> User Management</h1>
    
     <table class = "table table-striped table-hover">
       <tr>
@@ -56,7 +56,7 @@ if ($stm = $connect->prepare('SELECT * FROM users')) {
           <td><?php echo $record['email']; ?></td>
           <td><?php echo $record['active']; ?></td>
           <td>
-            <a href="users_edit.php?id=<?php echo $record['id']; ?>">Edit</a>
+            <a href="users_edit.php?id=<?php echo $record['id']; ?>">Edit |</a>
             <a href="users.php?delete=<?php echo $record['id']; ?>">Delete</a>
           </td>
       

@@ -15,7 +15,7 @@ if (isset($_POST['username'])){
         $stm->execute();
         
 
-        set_message("A new user " . $_SESSION['username'] . " has beed added");
+        set_message("A new user " . $_SESSION['username'] . " has been added");
         header('Location: users.php');
         $stm->close();
         die();

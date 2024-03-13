@@ -1,9 +1,9 @@
 <?php
 
 $servername = 'localhost';
-$username = 'blog_9_1';
+$username = 'blog_9';
 $password = 'admin';
-$database = 'blog_9_1';
+$database = 'blog_9';
 
 $connect = mysqli_connect($servername, $username, $password, $database);
 
@@ -11,8 +11,5 @@ $connect = mysqli_connect($servername, $username, $password, $database);
 if (mysqli_connect_errno()) {
     die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
-
-// Connected successfully
-echo 'Connected successfully';
 
 ?>

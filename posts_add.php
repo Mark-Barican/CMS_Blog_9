@@ -1,6 +1,6 @@
 <?php
 
-include('includes/config.inc.php');
+include('includes/config.php');
 include('includes/database.php');
 include('includes/functions.php');
 secure();
@@ -14,7 +14,7 @@ if (isset($_POST['title'])){
         $stm->execute();
         
 
-        set_message("A new post " . $_SESSION['username'] . " has beed added");
+        set_message("A new post by  " . $_SESSION['username'] . " has been added");
         header('Location: posts.php');
         $stm->close();
         die();
@@ -45,6 +45,7 @@ if (isset($_POST['title'])){
                 <div class="form-outline mb-4">
                     <textarea name="content" id="content"></textarea>
                 </div>
+
 
                 <!-- Date select -->
                 <div class="form-outline mb-4">

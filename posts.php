@@ -1,6 +1,6 @@
 <?php
 
-include('includes/config.inc.php');
+include('includes/config.php');
 include('includes/database.php');
 include('includes/functions.php');
 secure();
@@ -12,7 +12,7 @@ if (isset($_GET['delete'])){
       $stm->execute();
       
 
-      set_message("A post " . $_GET['delete'] . " has been deleted");
+      set_message("Post " . $_GET['delete'] . " has been deleted");
       header('Location: posts.php');
       $stm->close();
       die();
@@ -38,13 +38,13 @@ if ($stm = $connect->prepare('SELECT * FROM posts')) {
 ?>
 <div class="container mt-5">
   <div class="row justify-content-center">
-    <h1 class="dispaly-1">Posts Management</h1>
+    <h1 class="display-1">Posts Management</h1>
    
     <table class = "table table-striped table-hover">
       <tr>
         <th>ID</th>
         <th>Title</th>
-        <th>Author</th>
+        <th>Author ID</th>
         <th>Content</th>
         <th>Date</th>
         <th>Edit | Delete</th>
@@ -58,7 +58,7 @@ if ($stm = $connect->prepare('SELECT * FROM posts')) {
           <td><?php echo $record['content']; ?></td>
           <td><?php echo $record['date']; ?></td>
           <td>
-            <a href="posts_edit.php?id=<?php echo $record['id']; ?>">Edit</a>
+            <a href="posts_edit.php?id=<?php echo $record['id']; ?>">Edit |</a>
             <a href="posts.php?delete=<?php echo $record['id']; ?>">Delete</a>
           </td>
       
@@ -77,6 +77,7 @@ if ($stm = $connect->prepare('SELECT * FROM posts')) {
 
 <?php
 }
+
 else
 {
   echo 'No posts found!';
