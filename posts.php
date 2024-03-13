@@ -1,6 +1,6 @@
 <?php
 
-include('includes/config.inc.php');
+include('includes/config.php');
 include('includes/database.php');
 include('includes/functions.php');
 secure();
@@ -12,7 +12,7 @@ if (isset($_GET['delete'])){
       $stm->execute();
       
 
-      set_message("A post " . $_GET['delete'] . " has been deleted");
+      set_message("Post " . $_GET['delete'] . " has been deleted");
       header('Location: posts.php');
       $stm->close();
       die();
@@ -58,7 +58,7 @@ if ($stm = $connect->prepare('SELECT * FROM posts')) {
           <td><?php echo $record['content']; ?></td>
           <td><?php echo $record['date']; ?></td>
           <td>
-            <a href="posts_edit.php?id=<?php echo $record['id']; ?>">Edit</a>
+            <a href="posts_edit.php?id=<?php echo $record['id']; ?>">Edit</a> |
             <a href="posts.php?delete=<?php echo $record['id']; ?>">Delete</a>
           </td>
       

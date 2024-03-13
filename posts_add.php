@@ -1,6 +1,6 @@
 <?php
 
-include('includes/config.inc.php');
+include('includes/config.php');
 include('includes/database.php');
 include('includes/functions.php');
 secure();
@@ -14,7 +14,7 @@ if (isset($_POST['title'])){
         $stm->execute();
         
 
-        set_message("A new post " . $_SESSION['username'] . " has beed added");
+        set_message("A new post by " . $_SESSION['username'] . " has beed added");
         header('Location: posts.php');
         $stm->close();
         die();

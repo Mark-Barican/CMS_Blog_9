@@ -1,6 +1,6 @@
 <?php
 
-include('includes/config.inc.php');
+include('includes/config.php');
 include('includes/database.php');
 include('includes/functions.php');
 secure();
@@ -15,7 +15,7 @@ if (isset($_POST['title'])) {
 
         $stm->close();
 
-        set_message("A post  " . $_GET['id'] . " has been updated");
+        set_message("Post ID  " . $_GET['id'] . " has been updated");
         header('Location: posts.php');
         die();
 
